@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  test:
+  e2e-tests:
     runs-on: ubuntu-latest
 
     steps:
@@ -33,5 +33,5 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
-      - name: Run Playwright tests
-        run: npx playwright test
+      - name: Run E2E tests Playwright
+        run: npm run test:e2e
