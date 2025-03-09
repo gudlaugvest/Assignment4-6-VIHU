@@ -4,7 +4,7 @@ import { cleanup, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event"; // 🧑‍🏫 Use this to act like a user
 import Home from "../pages/index";
 import {server} from './setupMSW';
-import { setupServer } from "msw/node";
+
 
 // 🧑‍🏫 Todo add your UI tests here
 describe("Todo List", () => {
@@ -15,6 +15,9 @@ describe("Todo List", () => {
 
   //Write a test that asserts that loading is displayed when the response is not correct
   it("should show loading when response is not correct", async () => {
+    server.use(
+
+    );
   });
 
 
