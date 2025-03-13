@@ -1,7 +1,19 @@
 import { test, expect } from "@playwright/test";
 import { describe } from "node:test";
 
+import { PrismaClient } from "@prisma/client";
+
+const = prisma = new PrismaClient();
+
 describe("TODO App", () => {
+
+  beforeEach(async ({ page }) => {
+    await prisma.todo.deleteMany();
+  });
+
+  test.afterAll(async () => {
+    await prisma.$disconnect();
+  });
   
   // Check if TODO list is empty
   test('should have an empty list', async ({ page }) => {
