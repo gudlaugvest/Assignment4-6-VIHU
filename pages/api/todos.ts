@@ -1,10 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import type { Todo } from "../../types/todo";
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-let todos: Todo[] = [];
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === "GET") {
@@ -12,19 +10,19 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     return res.status(200).json(todos);
   }
 
-  if (req.method == "POST") {
+  if (req.method === "POST") {
     const { text } = req.body;
-    const todo = await prisma.todo.create({
+    const todo = prisma.todo.create({
       data: {
         text,
       },
     });
-    return res.status(201).json(todo);
+    return res.status(200).json(todo);
   }
 
   if (req.method === "PUT") {
     const { id, text } = req.body;
-    const todo = await prisma.todo.update({
+    const todo = prisma.todo.update({
       where: {
         id,
       },
@@ -32,16 +30,16 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         text,
       },
     });
-    return res.status(200).json(todos);
+    return res.status(200).json(todo);
   }
 
   if (req.method === "DELETE") {
     const { id } = req.body;
-    const todo = await prisma.todo.delete({
+    const todo = prisma.todo.delete({
       where: {
         id,
       },
     });
-    return res.status(200).json(todos);
+    return res.status(200).json(todo);
   }
 }
