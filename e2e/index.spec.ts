@@ -1,13 +1,13 @@
 import { test, expect } from "@playwright/test";
-import { describe } from "node:test";
+import { beforeEach, describe } from "node:test";
 
 import { PrismaClient } from "@prisma/client";
 
-const = prisma = new PrismaClient();
+const prisma = new PrismaClient();
 
 describe("TODO App", () => {
 
-  beforeEach(async ({ page }) => {
+  beforeEach(async () => {
     await prisma.todo.deleteMany();
   });
 
