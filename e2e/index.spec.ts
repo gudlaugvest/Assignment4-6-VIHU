@@ -15,7 +15,8 @@ describe("TODO App", () => {
     await prisma.$disconnect();
   });
   
-  // Check if TODO list is empty
+  
+  // check if TODO list is empty
   test('should have an empty list', async ({ page }) => {
     await expect(page.locator('li')).toHaveCount(0);
   });
