@@ -1,19 +1,19 @@
 import { test, expect } from "@playwright/test";
-import { beforeEach, describe } from "node:test";
+// import { beforeEach, describe } from "node:test";
 
-import { PrismaClient } from "@prisma/client";
+// import { PrismaClient } from "@prisma/client";
 
-const prisma = new PrismaClient();
+// const prisma = new PrismaClient();
 
 describe("TODO App", () => {
 
-  beforeEach(async () => {
-    await prisma.todo.deleteMany();
-  });
+  // beforeEach(async () => {
+  //   await prisma.todo.deleteMany();
+  // });
 
-  test.afterAll(async () => {
-    await prisma.$disconnect();
-  });
+  // test.afterAll(async () => {
+  //   await prisma.$disconnect();
+  // });
   
   
   // check if TODO list is empty
