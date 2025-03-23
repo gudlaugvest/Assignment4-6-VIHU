@@ -21,7 +21,7 @@ describe("TODO App", () => {
     await expect(page.locator('li')).toHaveCount(0);
   });
   
-  
+
   // Add new item to the TODO list
   test('should add a new item to the list', async ({ page }) => {
     await page.goto('/');
@@ -37,7 +37,6 @@ describe("TODO App", () => {
 
   // Add a second item to the TODO list
   test('should add a second item to the list', async ({ page }) => {
-    await page.waitForTimeout(4000);
     await page.goto('/');
     await page.fill('input', 'do something');
     await page.keyboard.press('Enter');
@@ -55,7 +54,6 @@ describe("TODO App", () => {
   
   // Delete item from the TODO list
   test('should delete an item from the list', async ({ page }) => {
-    await page.waitForTimeout(6000);
     await page.goto('/');
     await page.fill('input', 'do something');
     await page.keyboard.press('Enter');
