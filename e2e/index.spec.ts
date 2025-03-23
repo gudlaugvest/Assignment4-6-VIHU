@@ -36,7 +36,7 @@ describe("TODO App", () => {
 
   // Add a second item to the TODO list
   test('should add a second item to the list', async ({ page }) => {
-    await page.waitForTimeout(4000);
+    await page.waitForTimeout(3000);
     await page.goto('/');
     await page.fill('input', 'do something');
     await page.keyboard.press('Enter');
