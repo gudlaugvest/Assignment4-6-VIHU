@@ -21,24 +21,25 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   if (req.method === "PUT") {
-    const { id, text } = req.body;
+    const { id } = req.query;
+    const { text } = req.body;
     const todo = await prisma.todo.update({
       where: {
-        id,
+        id: String(id)
       },
       data: {
-        text,
-      },
+        text
+      }
     });
     return res.status(200).json(todo);
   }
 
   if (req.method === "DELETE") {
-    const { id } = req.body;
+    const { id } = req.query;
     const todo = await prisma.todo.delete({
       where: {
-        id,
-      },
+        id: String(id)
+      }
     });
     return res.status(200).json(todo);
   }
