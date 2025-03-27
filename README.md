@@ -5,4 +5,4 @@
 [Preview Link](https://assignment4-6-vihu-gudlaugvest-gudlaug-vestmanns-projects.vercel.app/)
 
 ## Dashboard Photo
-![Datadog TODO dashboard](datadog.png)
+![Datadog TODO dashboard](dashboard.png)
